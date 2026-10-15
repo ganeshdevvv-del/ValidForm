@@ -4,34 +4,38 @@ const message = document.getElementById("message");
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // field array.............
     const fields = [
-        { id: "name", error: "nameError", message: "fill THE Name" },
-        { id: "email", error: "emailError", message: "fill the Email" },
-        { id: "password", error: "passwordError", message: "fill the Password" },
-        { id: "age", error: "ageError", message: "fill the Age" },
+        { id: "name", error: "nameError", message: "Fill the Name" },
+        { id: "email", error: "emailError", message: "Fill the Email" },
+        { id: "password", error: "passwordError", message: "Fill the Password" },
+        { id: "age", error: "ageError", message: "Fill the Age" },
         { id: "gender", error: "genderError", message: "Please select Gender" }
     ];
-    //loop the array function....
-  
 
     message.textContent = "";
 
+    let isValid = true;
+
     for (const field of fields) {
         const input = document.getElementById(field.id);
+        const error = document.getElementById(field.error);
+        error.textContent = "";
+        input.style.border = "";
 
         if (input.value.trim() === "") {
-            const error = document.getElementById(field.error);
-
             error.textContent = field.message;
             error.style.color = "red";
+            input.style.border = "2px solid red";
 
-            input.focus();
-            return;
+            isValid = false;
         }
+    }
+
+    if (!isValid) {
+        return;
     }
 
     message.textContent = "Form submitted successfully!";
     message.style.color = "green";
-}
-);
+});
+
