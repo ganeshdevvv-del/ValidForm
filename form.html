@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 <div class="container">
     <h2 class="p-4">Form Validation</h2>
 
-    <form id="myForm" novalidate class="d-flex justifies-content-center">
+    <form id="myForm" novalidate>
         <div class="row">
 
             <div class="col-md-6 mb-3">
@@ -30,6 +31,12 @@
                 <label for="password">Password*:</label>
                 <input type="password" class="form-control" id="password">
                 <small id="passwordError"></small>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="conf-password">Confirm Password*:</label>
+                <input type="password" class="form-control" id="conf-password">
+                <small id="confPasswordError"></small>
             </div>
 
             <div class="col-md-6 mb-3">
@@ -61,12 +68,12 @@
 
             <div class="col-md-6 mb-3">
                 <label for="website">Website:</label>
-                <input type="url" class="form-control" id="website" name="website">
+                <input type="url" class="form-control" id="website">
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="address">Address:</label>
-                <textarea class="form-control" id="address" name="address"></textarea>
+                <textarea class="form-control" id="address"></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
